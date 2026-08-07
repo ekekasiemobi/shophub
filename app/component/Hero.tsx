@@ -14,15 +14,21 @@ function Hero() {
 
         <button className="bg-black text-white rounded-full px-10 py-2 mt-6">Shop Now</button>
 
-         <div className="gap-5">
+         <div className="flex flex-row divide-gray-400 mt-8 divide-x gap-5">
+          <div className="pr-8 text-left">
          <h2 className="font-bold text-3xl mt-5">500+</h2>
-        <p className="text-gray-500">International Brands</p>
+        <p className="text-gray-500 whitespace-nowrap text-[10px]">International Brands</p>
+        </div>
 
+        <div className="pr-8">
         <h2 className="font-bold text-3xl mt-5">3,000+</h2>
-        <p className="text-gray-500">High quality products</p>
+        <p className="text-gray-500 whitespace-nowrap text-[10px]">High quality products</p>
+        </div>
 
+        <div>
         <h2 className="font-bold text-3xl mt-5">30,000+</h2>
-        <p className="text-gray-500">Happy Customers</p>
+        <p className="text-gray-500 text-[10px]">Happy Customers</p>
+        </div>
         </div>
       </div>
 
