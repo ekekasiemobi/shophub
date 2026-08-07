@@ -12,11 +12,11 @@ export function Input({ label, type = "text", ...props }: InputProps) {
   
   return (
     <div>
-      <label className="block text-xs text-gray-600 mb-1.5">{label}</label>
+      <label className="block text-xs text-black mb-1.5">{label}</label>
       <div className="relative">
         <input
           type={isPassword && show ? "text" : type}
-          className="w-full border-gray-300 rounded-md px-3 py-2.5 text-sm focus:outline-gray-600 focus:ring-2 focus:ring-black focus:border-black hover:border-indigo-600"
+          className="w-full bg-white outline-black hover:outline-indigo-600 text-sm text-black rounded-md px-3 py-2.5"
           {...props}
         />
         {isPassword && (

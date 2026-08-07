@@ -20,16 +20,16 @@ export default function AuthLayout({
       <div className="w-full max-w-5xl bg-[#F0EEED] rounded-2xl shadow-xl flex flex-col md:flex-row overflow-hidden">
         
         
-        <div className="w-full md:w-1/3  flex items-center justify-center}">
+        <div className="w-full md:w-1/4 flex items-center justify-center}">
           
         </div>
 
         
-        <div className="w-full md:w-1/2 p-8 md:p-10">
+        <div className="w-full md:w-1/2 p-8 md:p-8">
           <div className="flex justify-end mb-8">
             <div className="flex items-center gap-2 text-gray-700 font-semibold">
-              <FaLocationPin className="text-indigo-600" />
-              <span>ShopHub</span>
+              <FaLocationPin className="text-black" />
+              <span>SHOPHUB</span>
             </div>
           </div>
 

@@ -25,7 +25,7 @@ export default function Login() {
         <Input 
           label="Password" 
           type="password" 
-          placeholder="••••" 
+          placeholder="••••••••" 
           required 
         />
 
@@ -52,14 +52,14 @@ export default function Login() {
         </div>
 
         <div className="grid grid-cols-3 gap-3">
-          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center hover:bg-gray-200">
+          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center bg-black hover:bg-gray-400">
             <FaFacebook className="text-blue-600" />
           </button>
-          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center hover:bg-gray-200">
+          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center bg-black hover:bg-gray-400">
             <FaGoogle className="text-red-500" />
           </button>
-          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center hover:bg-gray-200">
-            <FaApple className="color-black" />
+          <button type="button" className="border border-gray-300 rounded-md py-2.5 flex justify-center bg-black hover:bg-gray-400">
+            <FaApple />
           </button>
         </div>
       </form>
