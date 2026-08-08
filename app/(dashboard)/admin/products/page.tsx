@@ -16,12 +16,12 @@ export interface Product {
     discountPercentage:number;
     rating:number;
     stock:number;
-    total:number;
+    availabilityStatus:string;
     images:string;
+    total:string;
 }
 
 const Products = () => {
-
 const [products, setProducts] = useState<Product[]>([]);
 
 useEffect(() => {
@@ -39,7 +39,8 @@ useEffect(() => {
 }
 FetchProducts();
 }, []);
-
+                    
+const isLow = Products.availabilityStatus?.toLowercase() === 'low';
   return (
     <div className='mt-10'>
       <h3 className='text-2xl mb-4 font-semibold'>
@@ -54,8 +55,8 @@ FetchProducts();
                     <TableHead>Price</TableHead>
                     <TableHead>Category</TableHead>
                     <TableHead>Stock</TableHead>
+                    <TableHead>availabilityStatus</TableHead>
                     <TableHead>View Product</TableHead>
-                    <TableHead>Total</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -63,16 +64,20 @@ FetchProducts();
                     <TableRow key={product.id}>
                         <TableCell>{product.id}</TableCell>
                         <TableCell>
-                            <div className='flex flex-cols gap-3'>
-                                <Image src={product.images} alt='' width={100} height={50} />
-                                {product.title}
+                            <div className='flex flex-row gap-3'>
+                                {product.images.map((index)=> (
+                                    <Image key={index} src={index} alt="Image" width={100} height={50}/>
+                                ))}
                             </div>
+                            <span className='justify-center bg-amber-100 text-center px-2 py-2 rounded-sm'>{product.title}</span>
                         </TableCell>
                         <TableCell>{product.price}</TableCell>
                         <TableCell>{product.category}</TableCell>
                         <TableCell>{product.stock}</TableCell>
+                        <TableCell className={isLow ? "bg-red-500 text-white font-bold" : ""}>{product.availabilityStatus}</TableCell>
                         <TableCell><Link href={`/products/details/${product.id}`}>
-                        <Button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs'>Views Details</Button></Link></TableCell>
+                        <Button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
+                            px-4 rounded text-xs'>Views Details</Button></Link></TableCell>
                     </TableRow>
                 ))}
             </TableBody>
