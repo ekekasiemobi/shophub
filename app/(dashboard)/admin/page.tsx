@@ -1,8 +1,4 @@
-// import Image from "next/image";
 import { SearchIcon } from "lucide-react"
-import {
-  Field
-} from "@/components/ui/field"
 import {
   InputGroup,
   InputGroupAddon,
@@ -17,17 +13,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full">
-      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5] border-b border-[#d5d5d5] px-5 flex items-center justify-between">
+      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5a1] border-b border-[#d5d5d5] px-5 flex items-center justify-between">
         <h2 className="text-[22px] font-bold py-6">Dashboard</h2>
         <div className="flex items-center gap-3">
-          <Field className="max-w-sm">
-            <InputGroup>
+          <div className="max-w-sm">
+            <InputGroup className="border-2 border-[#626262]">
               <InputGroupInput id="inline-start-input" placeholder="Search..." />
               <InputGroupAddon align="inline-end">
                 <SearchIcon className="text-muted-foreground" />
               </InputGroupAddon>
             </InputGroup>
-          </Field>
+          </div>
 
           <IoNotificationsCircleOutline className="w-10 h-10"/>
 

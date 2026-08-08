@@ -12,7 +12,7 @@ const Settings = async ({ searchParams }: SettingsPageProps) => {
 
   return (
     <div className="min-h-screen w-full">
-      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5] px-5 py-6">
+      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5a1] px-5 py-6">
         <h2 className="text-[22px] font-bold">Setting</h2>
       </div>
       <div className="px-5 py-4">
