@@ -1,6 +1,6 @@
- import Customer from "./component/Customer";
-import type { Product } from "./component/type.ts";
-import Hero from "./component/Hero";
+ import Customer from "./components/Customer";
+import type { Product } from "./components/type";
+import Hero from "./components/Hero";
 import axios from "axios";
 import Image from "next/image";
 
