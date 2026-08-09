@@ -10,7 +10,7 @@ import {
 const testimonials =[
   {
     name: "Sarah M.",
-    rating: 5,
+    rating: 4,
     review: "I&apos;m blown away by the quality of products I received from ShopHub. Each of the product I bought has exceeded my expectations."
   },
 
