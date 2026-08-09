@@ -66,9 +66,9 @@ FetchProducts();
                         <TableCell>{product.id}</TableCell>
                         <TableCell>
                             <div className='flex flex-cols gap-3'>
-                                {product.images.map((index)=> (
+                                {/* {product.images?.map((index:any)=> (
                                     <Image key={index} src={index} alt="Image" width={100} height={50}/>
-                                ))}
+                                ))} */}
                             </div>
                             {product.title}
                         </TableCell>
