@@ -1,6 +1,6 @@
-import Testimonials from "./components/Testimonials";
-import type { Product } from "./components/type";
-import Hero from "./components/Hero";
+import Testimonials from "../components/Testimonials";
+import type { Product } from "../components/type";
+import Hero from "../components/Hero";
 import axios from "axios";
 import Image from "next/image";
 import { Star, StarHalf } from "lucide-react";
