@@ -40,7 +40,7 @@ useEffect(() => {
 FetchProducts();
 }, []);
                     
-const isLow = Products.availabilityStatus?.toLowercase() === 'low';
+// const isLow = Products.availabilityStatus?.toLowercase() === 'low';
   return (
     <div className='mt-10'>
       <h3 className='text-2xl mb-4 font-semibold'>
@@ -65,16 +65,16 @@ const isLow = Products.availabilityStatus?.toLowercase() === 'low';
                         <TableCell>{product.id}</TableCell>
                         <TableCell>
                             <div className='flex flex-row gap-3'>
-                                {product.images.map((index)=> (
+                                {/* {product.images.map((index)=> (
                                     <Image key={index} src={index} alt="Image" width={100} height={50}/>
-                                ))}
+                                ))} */}
                             </div>
                             <span className='justify-center bg-amber-100 text-center px-2 py-2 rounded-sm'>{product.title}</span>
                         </TableCell>
                         <TableCell>{product.price}</TableCell>
                         <TableCell>{product.category}</TableCell>
                         <TableCell>{product.stock}</TableCell>
-                        <TableCell className={isLow ? "bg-red-500 text-white font-bold" : ""}>{product.availabilityStatus}</TableCell>
+                        {/* <TableCell className={isLow ? "bg-red-500 text-white font-bold" : ""}>{product.availabilityStatus}</TableCell> */}
                         <TableCell><Link href={`/products/details/${product.id}`}>
                         <Button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
                             px-4 rounded text-xs'>Views Details</Button></Link></TableCell>
