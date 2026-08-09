@@ -1,4 +1,6 @@
 import React from 'react'
+import { Star } from "lucide-react";
+
 import {
   Carousel,
   CarouselContent,
@@ -10,7 +12,7 @@ import {
 const testimonials =[
   {
     name: "Sarah M.",
-    rating: 4,
+    rating: 5,
     review: "I&apos;m blown away by the quality of products I received from ShopHub. Each of the product I bought has exceeded my expectations."
   },
 
@@ -38,9 +40,25 @@ function Customer() {
       <Carousel className=''>
     <CarouselContent>
       {testimonials.map((item, index) => (
-        <CarouselItem>
-
-        </CarouselItem>
+        <CarouselItem key={index} >
+          <div className='bg-white rounded-xl border p-6 shadow-sm h-full'>
+             <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className={`w-5 h-5 ${
+                        i < item.rating 
+                          ? "fill-yellow-400 text-yellow-400" 
+                          : "text-gray-300"
+                      }`} 
+                    />
+                  ))}
+                </div>
+                           {/* NAME + VERIFIED */}
+        
+              </div>
+          {/* </div> */}
+         </CarouselItem>
       ))}
   </CarouselContent>
 </Carousel>
