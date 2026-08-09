@@ -58,7 +58,7 @@ function Customer() {
         
               </div>
           {/* </div> */}
-        // </CarouselItem>
+         </CarouselItem>
       ))}
   </CarouselContent>
 </Carousel>
