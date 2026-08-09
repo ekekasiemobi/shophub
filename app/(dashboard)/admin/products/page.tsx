@@ -17,7 +17,7 @@ export interface Product {
     rating:number;
     stock:number;
     availabilityStatus:string;
-    images:string;
+    images:string[];
     total:string;
 }
 
@@ -65,9 +65,9 @@ FetchProducts();
                         <TableCell>{product.id}</TableCell>
                         <TableCell>
                             <div className='flex flex-row gap-3'>
-                                {/* {product.images.map((index)=> (
+                                {product.images.map((index)=> (
                                     <Image key={index} src={index} alt="Image" width={100} height={50}/>
-                                ))} */}
+                                ))}
                             </div>
                             <span className='justify-center bg-amber-100 text-center px-2 py-2 rounded-sm'>{product.title}</span>
                         </TableCell>

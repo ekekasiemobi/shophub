@@ -1,6 +1,6 @@
-import Customer from "./components/Customer";
-import type { Product } from "./components/type";
-import Hero from "./components/Hero";
+import Customer from "../components/Customer";
+import type { Product } from "../components/type";
+import Hero from "../components/Hero";
 import axios from "axios";
 import Image from "next/image";
 import { Star, StarHalf } from "lucide-react";

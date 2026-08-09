@@ -30,11 +30,11 @@ const Sidebar = () => {
             </CommandItem>
             <CommandItem>
                 <UsersRound className="mr-2 h-4 w-4"/>
-                <Link href='/'>Customers</Link>
+                <Link href='/admin/customers'>Customers</Link>
             </CommandItem>
             <CommandItem>
                 <TicketPercent className="mr-2 h-4 w-4"/>
-                <Link href='/'>Coupon Code</Link>
+                <Link href='/admin/analytics'>Analytics</Link>
             </CommandItem>
             <CommandItem>
                 <Blend className="mr-2 h-4 w-4"/>
@@ -75,7 +75,7 @@ const Sidebar = () => {
             </CommandItem>
             <CommandItem>
                 <Settings className="mr-2 h-4 w-4" />
-                <Link href='/'>Control Authorithy</Link>
+                <Link href='/admin/settings'>Settings</Link>
             </CommandItem>
             <CommandItem className="mt-6">
                 <div className="flex flex-cols">
