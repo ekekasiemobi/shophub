@@ -27,13 +27,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <div className="flex">
-          <div className="hidden md:block h-screen w-75">
+
+        {/* New nav */}
+        <div className="grid grid-cols-[30vw_1fr]">
+          <div className="flex h-screen w-62.5 overflow-hidden">
             <Sidebar />
           </div>
-          <div className="p-5 w-full md:max-w-285">
-            {children}
-          </div>
+
+          <main className="overflow-y-auto bg-white">{children}</main>
         </div>
       </body>
     </html>

@@ -17,7 +17,7 @@ export interface Product {
     rating:number;
     stock:number;
     availabilityStatus:string;
-    images:string;
+    images:string[];
     total:string;
 }
 
@@ -40,7 +40,7 @@ useEffect(() => {
 FetchProducts();
 }, []);
                     
-const isLow = Products.availabilityStatus?.toLowercase() === 'low';
+// const isLow = Products.availabilityStatus?.toLowercase() === 'low';
   return (
     <div className='mt-10'>
       <h3 className='text-2xl mb-4 font-semibold'>
@@ -74,7 +74,7 @@ const isLow = Products.availabilityStatus?.toLowercase() === 'low';
                         <TableCell>{product.price}</TableCell>
                         <TableCell>{product.category}</TableCell>
                         <TableCell>{product.stock}</TableCell>
-                        <TableCell className={isLow ? "bg-red-500 text-white font-bold" : ""}>{product.availabilityStatus}</TableCell>
+                        {/* <TableCell className={isLow ? "bg-red-500 text-white font-bold" : ""}>{product.availabilityStatus}</TableCell> */}
                         <TableCell><Link href={`/products/details/${product.id}`}>
                         <Button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 
                             px-4 rounded text-xs'>Views Details</Button></Link></TableCell>
