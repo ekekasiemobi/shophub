@@ -8,6 +8,8 @@ import {
   AreaChart, Area, PieChart, Pie, Cell
 } from 'recharts';
 
+
+
 // --- 1. API Response Interfaces (DummyJSON) ---
 interface DummyUser {
   id: number;

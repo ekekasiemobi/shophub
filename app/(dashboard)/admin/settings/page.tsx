@@ -1,4 +1,4 @@
-import { SettingsTabs } from "./components/SettingsTabs.tsx.js";
+import {SettingsTabs} from "../settings/components/SettingsTabs.tsx"
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
