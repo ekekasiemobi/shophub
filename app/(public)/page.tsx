@@ -1,4 +1,4 @@
-import Customer from "./components/Customer";
+import Testimonials from "./components/Testimonials";
 import type { Product } from "./components/type";
 import Hero from "./components/Hero";
 import axios from "axios";
@@ -20,7 +20,7 @@ export default async function Home() {
       <div className="grid grid-cols-4 gap-4 w-[90%] mx-auto">
         {data.slice(0).map((item: Product) => {
           return (
-            <div key={item.id} className="relative">
+            <div key={item.id}>
               <Image
                 src={item?.images[0]}
                 alt={item.name}
@@ -28,11 +28,11 @@ export default async function Home() {
                 height={500}
                 className="w-full h-[270] bg-gray-200 mt-10 rounded-lg"
               />
-              <p className="absolute -mt-10 pl-10 -bottom-6 text-1xl text-black font-light">
+              <p className="font-extrabold -bottom-6 text-1xl text-black">
                 {item.title}
               </p>
 
-              <div className="flex items-center justify-center gap-1 text-yellow-300">
+              <div className="flex gap-1 text-yellow-300">
                 {[...Array(5)].map((_, i) => {
                   if (i < Math.floor(item.rating)) {
                     return <Star key={i} className="w-4 h-4 fill-yellow-300" />;
@@ -47,8 +47,8 @@ export default async function Home() {
                 <span className="text-[8px] text-gray-400 ml-1">
                   {item.rating.toFixed(1)}
                 </span>
-                <p>${item.price}</p>
               </div>
+              <p className="font-extrabold ">${item.price}</p>
             </div>
             
           );
@@ -56,7 +56,7 @@ export default async function Home() {
          
       </div>
       </div>
-      <Customer />
+      <Testimonials />
     </div>
   );
 }
