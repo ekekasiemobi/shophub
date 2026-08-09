@@ -48,7 +48,7 @@ export default async function Home() {
                   {item.rating.toFixed(1)}
                 </span>
               </div>
-              <p className="font-extrabold ">${item.price}</p>
+              <p className="font-extrabold">${item.price}</p>
             </div>
             
           );
