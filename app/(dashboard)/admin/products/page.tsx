@@ -42,7 +42,7 @@ FetchProducts();
                     
 // const isLow = Products.availabilityStatus?.toLowercase() === 'low';
   return (
-    <div className='mt-10'>
+    <div className='mt-10 px-5'>
       <h3 className='text-2xl mb-4 font-semibold'>
         {/* {title ? title : 'Products'} */}
       </h3>

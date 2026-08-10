@@ -1,18 +1,44 @@
+
 import React from 'react'
-import { Newspaper, CircleX, SquareCheckBig, ChartSpline } from "lucide-react"
-import DashboardCard from './component/DashboardCard'
+import { SearchIcon } from "lucide-react"
 import ProductTable from './component/products/ProductTable'
+import { IoNotificationsCircleOutline } from "react-icons/io5";
+import {
+  Field
+} from "@/components/ui/field"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
+import DashboardCard from './component/DashboardCard';
+
 
 const HomePage = () => {
   return (
     <>
-      <div className='bg-[#f9fafb] flex flex-col md:flex-row justify-between gap-5 mt-5'>
-        <DashboardCard title='Total Orders' count={100} icon={<ChartSpline className="text-slate-500" size={32} />}/>
-        <DashboardCard title='New Orders' count={100} icon={<Newspaper className="text-slate-500" size={32} />}/>
-        <DashboardCard title='Completed Orders' count={100} icon={<SquareCheckBig className="text-slate-500" size={32} />}/>
-        <DashboardCard title='Canceled Orders' count={100} icon={<CircleX className="text-slate-500" size={32} />}/>
+      <div className="min-h-screen w-full">
+        <div className="sticky top-0 z-20 w-full border-b border-[#d5d5d5] px-5 flex items-center justify-between">
+          <h2 className="text-[22px] font-bold py-6">Dashboard</h2>
+          <div className="flex items-center gap-3">
+            <Field className="max-w-sm">
+              <InputGroup>
+                <InputGroupInput id="inline-start-input" placeholder="Search..." />
+                <InputGroupAddon align="inline-end">
+                  <SearchIcon className="text-muted-foreground" />
+                </InputGroupAddon>
+              </InputGroup>
+            </Field>
+
+            <IoNotificationsCircleOutline className="w-10 h-10" />
+          </div>
+        </div>
+
+        <div className="flex flex-col px-5">
+          <DashboardCard />
+          <ProductTable title='Latest Products' limit={5} />
+        </div>
       </div>
-      <ProductTable title='Latest Products' limit={5} />
     </>
   )
 }
