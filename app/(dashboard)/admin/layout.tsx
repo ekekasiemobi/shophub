@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-import Navbar from "./component/Navbar";
-import Sidebar from "./component/Sidebar";
+import "../../globals.css"
+import SideNav from "./component/SideNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,29 +11,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        {/* <div className="flex">
-          <div className="hidden md:block h-screen w-75 sticky">
-            <Sidebar />
-          </div>
-          <div className="p-5 w-full md:max-w-285">
-            {children}
-          </div>
-        </div> */}
-
-        {/* New nav */}
-        <div className="flex h-screen w-62.5 overflow-hidden">
-            <Sidebar />
-          <main className="min-h-0 flex-1 overflow-y-auto bg-white">
-            {children}
-          </main>
-        </div>
-      </body>
-    </html>
+    <div className="flex h-screen w-full overflow-hidden">
+      <SideNav />
+      <main className="min-h-0 flex-1 overflow-y-auto bg-white">{children}</main>
+    </div>
   );
 }

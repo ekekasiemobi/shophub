@@ -5,4 +5,6 @@ export type Product = {
     name: string
     rating: number
     price: number;
+    thumbnail: string;
+    discountPercentage: number;
 }
