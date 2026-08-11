@@ -14,7 +14,6 @@ import {
 import DashboardCard from './component/DashboardCard';
 import ProtectedRoute from '@/app/(authentication)/components/ProtectedRoute';
 
-
 const HomePage = () => {
   return (
     <ProtectedRoute>
@@ -38,7 +37,7 @@ const HomePage = () => {
 
         <div className="flex flex-col px-5">
           <DashboardCard />
-          <ProductTable title='Latest Products' limit={5} />
+          <ProductTable title='Latest Products' limit={10} />
         </div>
       </div>
     </>

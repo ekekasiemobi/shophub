@@ -1,5 +1,5 @@
 "use client"
-import { LogOut, PackageSearch, ShoppingCart, Users2 } from "lucide-react"
+import { CirclePlus, LogOut, PackageSearch, ShoppingCart, Users2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -34,6 +34,12 @@ const SideNav = () => {
               className={`flex items-center justify-start gap-3 w-full px-4 ${path === '/admin/products' ? 'text-[16px] font-bold bg-[#626262] text-[#ededed] py-2 rounded-md' : 'text-[16px] font-bold'}`}
             >
               <PackageSearch  className="w-6 h-6" />Products
+            </Link>
+            <Link
+              href="/admin/products/addProducts"
+              className={`flex items-center justify-start gap-3 w-full px-4 ${path === '/admin/new' ? 'text-[16px] font-bold bg-[#626262] text-[#ededed] py-2 rounded-md' : 'text-[16px] font-bold'}`}
+            >
+              < CirclePlus  className="w-6 h-6" />Add New Products
             </Link>
             <Link
               href="#"
