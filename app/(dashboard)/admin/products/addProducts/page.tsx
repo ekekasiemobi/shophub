@@ -17,6 +17,7 @@ const formSchema = z.object({
     brand:z.string().min(3, 'Brand must be at least 3 characters.'),
 });
 type FormValues = z.infer<typeof formSchema>;
+
 const AddProducts = () => {
       const form = useForm<FormValues>({
         resolver: zodResolver(formSchema),
