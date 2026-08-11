@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaLocationPin } from "react-icons/fa6";
+// import { FaLocationPin } from "react-icons/fa6";
 
 interface Props {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ export default function AuthLayout({
         <div className="w-full md:w-1/2 p-8 md:p-8">
           <div className="flex justify-end mb-8">
             <div className="flex items-center gap-2 text-gray-700 font-semibold">
-              <FaLocationPin className="text-black" />
+              {/* <FaLocationPin className="text-black" /> */}
               <span className="text-2xl md:text-2xl font-black tracking-tighter text-black">SHOP.HUB</span>
             </div>
           </div>
