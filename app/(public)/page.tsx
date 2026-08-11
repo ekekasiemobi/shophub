@@ -3,7 +3,7 @@ import type { Product } from "../components/type";
 import Hero from "../components/Hero";
 import axios from "axios";
 import Image from "next/image";
-import { Star, StarHalf } from "lucide-react";
+
 
 // import { Badge } from "@/components/ui/badge"
 // import { Button } from "@/components/ui/button"
