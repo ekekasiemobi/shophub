@@ -11,7 +11,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group"
-import DashboardCard from './component/DashboardCard';
+import IndexCard from './component/products/indexCard';
 
 
 const HomePage = () => {
@@ -35,7 +35,7 @@ const HomePage = () => {
         </div>
 
         <div className="flex flex-col px-5">
-          <DashboardCard />
+          <IndexCard />
           <ProductTable title='Latest Products' limit={5} />
         </div>
       </div>
