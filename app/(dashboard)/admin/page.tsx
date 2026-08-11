@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/input-group"
 import DashboardCard from './component/DashboardCard';
 
-
 const HomePage = () => {
   return (
     <>
@@ -36,7 +35,7 @@ const HomePage = () => {
 
         <div className="flex flex-col px-5">
           <DashboardCard />
-          <ProductTable title='Latest Products' limit={5} />
+          <ProductTable title='Latest Products' limit={10} />
         </div>
       </div>
     </>
