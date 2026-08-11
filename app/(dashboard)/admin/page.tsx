@@ -12,10 +12,12 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group"
 import DashboardCard from './component/DashboardCard';
+import ProtectedRoute from '@/app/(authentication)/components/ProtectedRoute';
 
 
 const HomePage = () => {
   return (
+    <ProtectedRoute>
     <>
       <div className="min-h-screen w-full">
         <div className="sticky top-0 z-20 w-full border-b border-[#d5d5d5] px-5 flex items-center justify-between">
@@ -40,6 +42,7 @@ const HomePage = () => {
         </div>
       </div>
     </>
+    </ProtectedRoute>
   )
 }
 

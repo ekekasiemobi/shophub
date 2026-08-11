@@ -14,7 +14,7 @@ export default function AuthLayout({
   subtitle,
 }: Props) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-300 p-4">
       
       
       <div className="w-full max-w-5xl bg-[#F0EEED] rounded-2xl shadow-xl flex flex-col md:flex-row overflow-hidden">

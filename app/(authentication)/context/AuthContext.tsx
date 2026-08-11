@@ -28,20 +28,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (username: string, password: string) => {
-    const res = await fetch("https://dummyjson.com/auth/login", {
+  const res = await fetch(
+    "https://dummyjson.com/auth/login",
+    {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    });
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    }
+  );
 
-    if (!res.ok) throw new Error("Invalid credentials");
+  if (!res.ok) {
+    throw new Error("Invalid credentials");
+  }
 
-    const userData = await res.json();
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    router.push("/dashboard");
-  };
+  const data = await res.json();
 
+  localStorage.setItem("token", data.accessToken);
+  localStorage.setItem("user", JSON.stringify(data));
+
+  setUser(data);
+};
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
