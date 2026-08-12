@@ -26,7 +26,7 @@ function Nav() {
         
           <Link href="/category" className="flex items-center gap-1 hover:text-gray-600 transition-colors">
             <span>Shop</span>
-            <TbChevronDown className="text-base text-gray-700" />
+            {/* <TbChevronDown className="text-base text-gray-700" /> */}
           </Link>
 
           <Link href="/on-sale" className="hover:text-gray-600 transition-colors">
@@ -58,6 +58,10 @@ function Nav() {
 
           <Link href="/account" aria-label="Account" className="p-1 hover:text-gray-600 transition-colors">
             <IoPersonCircleOutline className="text-2xl" />
+          </Link>
+
+          <Link href="/dashboard" className="hover:text-gray-600 transition-colors">
+            Login
           </Link>
         </div>
 
