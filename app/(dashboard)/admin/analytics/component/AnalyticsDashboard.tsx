@@ -8,7 +8,7 @@ import {
 } from 'recharts';
 
 
-// --- 1. API Response Interfaces (DummyJSON) ---
+// API Response Interfaces (DummyJSON)
 interface DummyUser {
   id: number;
   firstName: string;
@@ -152,10 +152,21 @@ const AnalyticsDashboard = () => {
         products.forEach(p => {
           categoryMap[p.category] = (categoryMap[p.category] || 0) + 1;
         });
-        const categoryData: CategoryDataPoint[] = Object.keys(categoryMap).map(key => ({
+        const categoryDataRaw: CategoryDataPoint[] = Object.keys(categoryMap).map(key => ({
           name: key,
           value: categoryMap[key]
         }));
+
+        const sortedCategoryData = [...categoryDataRaw].sort((a, b) => b.value - a.value);
+        const categoryData: CategoryDataPoint[] = sortedCategoryData.length > 9
+          ? [
+            ...sortedCategoryData.slice(0, 9),
+            {
+              name: 'Others',
+              value: sortedCategoryData.slice(9).reduce((sum, category) => sum + category.value, 0)
+            }
+          ]
+          : sortedCategoryData;
 
         // 4. Summary Metrics
         const totalRevenue = carts.reduce((acc, cart) => acc + cart.total, 0);
@@ -187,7 +198,7 @@ const AnalyticsDashboard = () => {
   if (loading) return <div className="p-10 text-center">Loading Analytics...</div>;
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 min-h-screen">
       <h1 className="text-3xl font-bold mb-8 text-gray-800">Analytics Dashboard</h1>
 
       {/* Revenue Summary Cards */}
@@ -198,9 +209,12 @@ const AnalyticsDashboard = () => {
           { title: 'Total Customers', value: data.summary.customers.toString(), color: 'border-purple-500' },
           { title: 'Avg Order Value', value: `$${data.summary.avgOrder}`, color: 'border-orange-500' },
         ].map((card, idx) => (
-          <div key={idx} className={`bg-white p-6 rounded-lg shadow-md border-l-4 ${card.color}`}>
-            <p className="text-gray-500 text-sm font-medium uppercase">{card.title}</p>
-            <p className="text-2xl font-bold mt-2">{card.value}</p>
+          <div key={idx} className={`p-6 rounded-lg shadow-md border-l-4 ${card.color}`}>
+            <div className="">
+              <p className="text-sm font-medium uppercase text-[18px] text-gray-900 leading-tight line-clamp-1">{card.title}</p>
+              <p className="text-2xl font-bold mt-2 text-amber-500 ">{card.value}</p>
+
+            </div>
           </div>
         ))}
       </div>
@@ -260,8 +274,7 @@ const AnalyticsDashboard = () => {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                // label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}   
+                label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
                 outerRadius={100}
                 fill="#8884d8"
                 dataKey="value"
