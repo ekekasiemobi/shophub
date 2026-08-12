@@ -6,7 +6,7 @@ import {
 import { ArrowUp } from "lucide-react"
 import Link from "next/link"
 
-const indexCard = () => {
+const IndexCard = () => {
     
 
 
@@ -96,4 +96,4 @@ const indexCard = () => {
     )
 }
 
-export default indexCard
+export default IndexCard

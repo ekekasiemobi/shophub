@@ -11,7 +11,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group"
-import IndexCard from './component/products/indexCard';
+import IndexCard from './component/IndexCard';
 
 
 const HomePage = () => {
