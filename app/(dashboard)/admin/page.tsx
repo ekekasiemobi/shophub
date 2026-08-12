@@ -11,13 +11,13 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group"
-import DashboardCard from './component/DashboardCard';
 import ProtectedRoute from '@/app/(authentication)/components/ProtectedRoute';
+import IndexCard from './component/IndexCard';
 
 const HomePage = () => {
   return (
-    <ProtectedRoute>
     <>
+    <ProtectedRoute>
       <div className="min-h-screen w-full">
         <div className="sticky top-0 z-20 w-full border-b border-[#d5d5d5] px-5 flex items-center justify-between">
           <h2 className="text-[22px] font-bold py-6">Dashboard</h2>
@@ -36,12 +36,12 @@ const HomePage = () => {
         </div>
 
         <div className="flex flex-col px-5">
-          <DashboardCard />
+          <IndexCard />
           <ProductTable title='Latest Products' limit={10} />
         </div>
       </div>
-    </>
     </ProtectedRoute>
+    </>
   )
 }
 

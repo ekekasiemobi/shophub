@@ -57,7 +57,7 @@ const onSubmit = async (data: FormData) => {
   return (
     <AuthLayout title="Login">
       <Toaster />
-      <p className="text-xs text-gray-500 mb-2">Welcome back let's dive back in</p>
+      <p className="text-xs text-gray-500 mb-2">Welcome back lets dive back in</p>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <Input label="Username" {...register("username")} errorMsg={errors.username?.message} />
         <Input label="Password" type="password" {...register("password")} errorMsg={errors.password?.message} />
