@@ -15,7 +15,7 @@ const Customer = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5] border-b border-[#d5d5d5] px-5 flex items-center justify-between">
+      <div className="sticky top-0 z-20 w-full border-b border-[#d5d5d5] px-5 flex items-center justify-between">
         <h2 className="text-[22px] font-bold py-6">Customer</h2>
         <div className="flex items-center gap-3">
           <Field className="max-w-sm">

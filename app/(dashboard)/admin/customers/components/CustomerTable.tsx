@@ -25,7 +25,7 @@ interface Userdata {
     company: {
         address: string
         city: string
-        name:string
+        name: string
     }
 }
 interface ReactPaginateArguments {
@@ -52,7 +52,7 @@ const CustomerTable = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('https://dummyjson.com/users'); 
+                const res = await axios.get('https://dummyjson.com/users');
                 const data = res.data.users
 
                 console.log(data)
@@ -97,7 +97,7 @@ const CustomerTable = () => {
             <h2 className="text-2xl font-bold mb-6">Customer Dashboard</h2>
 
             {/* Controls: Search & Filters */}
-            <div className="flex flex-wrap gap-4 mb-6 bg-[#ededed] p-4 rounded-lg shadow-sm">
+            <div className="flex flex-wrap gap-4 mb-6  p-4 rounded-lg shadow-sm">
                 <input
                     type="text"
                     placeholder="Search name or email..."
@@ -105,7 +105,7 @@ const CustomerTable = () => {
                     value={searchTerm}
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
-                        setCurrentPage(0); 
+                        setCurrentPage(0);
                     }}
                 />
                 <select
@@ -122,7 +122,7 @@ const CustomerTable = () => {
                     value={statusFilter}
                     onChange={(e) => {
                         setStatusFilter(e.target.value);
-                        setCurrentPage(0); 
+                        setCurrentPage(0);
                     }}
                 >
                     <option value="">All Roles</option>
@@ -200,8 +200,8 @@ const CustomerTable = () => {
 
             {/* Customer Details Modal */}
             {selectedUser && (
-                <div className="fixed inset-0 bg-[#626262] bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    <div className="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative">
+                <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-50 p-4 pointer-events-none">
+                    <div className="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative pointer-events-auto">
                         <button
                             onClick={() => setSelectedUser(null)}
                             className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"

@@ -16,8 +16,8 @@ import { IoNotificationsCircleOutline } from "react-icons/io5";
 const Analytics = () => {
   return (
     <div className="min-h-screen w-full">
-      <div className="sticky top-0 z-20 w-full bg-[#d5d5d5] border-b border-[#d5d5d5] px-5 flex items-center justify-between">
-        <h2 className="text-[22px] font-bold">Analytics</h2>
+      <div className="sticky top-0 z-20 w-full border-b border-[#d5d5d5] px-5 flex items-center justify-between">
+        <h2 className="text-[22px] font-bold py-6">Analytics</h2>
          <div className="flex items-center gap-3">
           <Field className="max-w-sm">
             <InputGroup>
@@ -29,10 +29,7 @@ const Analytics = () => {
           </Field>
 
           <IoNotificationsCircleOutline className="w-10 h-10"/>
-
-          {/* <div className="bg-[#000000] rounded-full flex items-center justify-center gap-3">
-            <Image src="/vercel.svg" alt="logo" width={15} height={15} />
-          </div> */}
+          
         </div>
       </div>
       <div className="px-5 py-4">
