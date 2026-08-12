@@ -34,7 +34,7 @@ const testimonials = [
   {
     name: "Lilian",
     rating: 4,
-    review: "It's a great experience shopping with SHopHub",
+    review: "It's a great experience shopping with ShopHub",
   },
 ];
 
@@ -47,7 +47,7 @@ function Customer() {
         </div>
 
         <Carousel>
-          <CarouselContent className="grid grid-cols-3">
+          <CarouselContent className="grid grid-cols-4">
             {testimonials.map((item, index) => (
               <CarouselItem key={index}>
                 <div className="bg-white rounded-xl border p-6 shadow-sm h-full">

@@ -46,7 +46,7 @@ const onSubmit = async (data: FormData) => {
    if (role === "admin") {
   router.push("/admin");
 } else {
-  router.push("/dashboard");
+  router.push("/cart");
 }
 
   } catch (error) {
