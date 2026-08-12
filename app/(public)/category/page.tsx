@@ -1,6 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { 
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle, 
+} from "@/components/ui/card"
+
 
 interface Product {
   id: number;
@@ -9,6 +17,8 @@ interface Product {
   discountPercentage: number;
   rating: number;
   thumbnail: string;
+  name: string;
+  images: string;
 }
 
 export default function CategoryPage() {
@@ -54,7 +64,7 @@ export default function CategoryPage() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         
     
-        <aside className="lg:col-span-1 space-y-8 pr-4">
+        <aside className="lg:col-span-1 space-y-8 pr-4 sticky top-6 h-fit">
           
       
           <div className="space-y-4">
@@ -69,7 +79,7 @@ export default function CategoryPage() {
                 ))}
               </div>
             ) : (
-              <ul className="space-y-1 max-h-60 pr-2 ">
+              <ul className="space-y-1 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
                 {categories.map((category) => (
                   <li key={category}>
                     <button
@@ -117,52 +127,50 @@ export default function CategoryPage() {
                 const discountedPrice = (
                   product.price - (product.price * product.discountPercentage) / 100
                 ).toFixed(2);
-
+                const imageUrl = Array.isArray(product.images) ? product.images[0] : product.images || product.thumbnail;
                 return (
                   <div key={product.id} className="group space-y-3 cursor-pointer">
-                    {/* Image Container */}
-                    <div className="relative bg-[#EFEFEF] rounded-2xl overflow-hidden aspect-square flex items-center justify-center p-4">
-                      <img
-                        src={product.thumbnail}
-                        alt={product.title}
-                        className="object-contain max-h-full transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
+                    <Card className="max-w-sm h-full hover:shadow-md transition-shadow " key={product.id}>
+                <Image
+                  className="w-full h-48 object-contain bg-[#F0EEED] p-2"
+                  src={imageUrl}
+                  alt={product.title || "Product Image"}
+                  width={200} height={200}
 
-                    {/* Details */}
-                    <div>
-                      <h4 className="font-semibold text-white text-base truncate">{product.title}</h4>
-                      
-                      {/* Rating */}
-                      <div className="flex items-center space-x-1 mt-1">
-                        {[...Array(5)].map((_, idx) => (
-                          <svg
-                            key={idx}
-                            className={`w-4 h-4 ${
-                              idx < Math.round(product.rating)
-                                ? 'text-yellow-400 fill-yellow-400'
-                                : 'text-gray-600'
-                            }`}
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
+                />
 
-                      {/* Price */}
-                      <div className="flex items-center space-x-2 mt-2">
-                        <span className="font-bold text-lg text-white">${discountedPrice}</span>
-                        {product.discountPercentage > 0 && (
-                          <>
-                            <span className="text-gray-500 line-through text-sm">${product.price}</span>
-                            <span className="bg-red-950 text-red-500 text-xs px-2 py-0.5 rounded-full font-medium">
-                              -{Math.round(product.discountPercentage)}%
-                            </span>
-                          </>
-                        )}
-                      </div>
-                    </div>
+                <CardHeader className="p-4 space-y-2">
+                  <CardTitle className="text-[18px] font-extrabold text-gray-900 leading-tight line-clamp-1">
+                    {product.title}
+                  </CardTitle>
+
+                  <div className="text-sm font-semibold text-amber-500 flex items-center gap-1">
+                    {"★".repeat(product.rating || 0)}
+                    {"☆".repeat(5 - (product.rating || 0))}
+                    <span className="text-gray-900 font-bold text-xs ml-1">
+                      {product.rating}
+                    </span>
+                  </div>
+
+                  <div className="flex gap-3 items-center">
+                    <span className="text-[16px] font-black text-gray-900">
+                      ${product.price}
+                    </span>
+
+                    {product.discountPercentage > 0 && (
+                      <span className="text-xs font-bold bg-red-50 text-red-600 px-2 py-0.5 rounded border border-red-100">
+                        -{Math.round(product.discountPercentage)}%
+                      </span>
+                    )}
+                  </div>
+
+                  {product.name && (
+                    <CardDescription className="line-clamp-2">
+                      {product.name}
+                    </CardDescription>
+                  )}
+                </CardHeader>
+              </Card>
                   </div>
                 );
               })}

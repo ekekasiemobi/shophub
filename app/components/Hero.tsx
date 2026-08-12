@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <div className="bg-gray-300 h-[80vh]">
+    <div className="bg-gray-300 h-[48vh]">
       <div className="container mx-auto">
         <div className="flex justify-center items-center w-[90%] mx-auto">
           {/* Left Hero */}

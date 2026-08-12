@@ -3,6 +3,7 @@ import type { Product } from "../components/type";
 import Hero from "../components/Hero";
 import axios from "axios";
 import Image from "next/image";
+// import Link from "next/link";
 import { Star, StarHalf } from "lucide-react";
 
 // import { Badge } from "@/components/ui/badge"
@@ -15,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import Link from "next/link";
 
 export default async function Home() {
   const res = await axios.get("https://dummyjson.com/products");
@@ -33,6 +35,7 @@ export default async function Home() {
             const imageUrl = Array.isArray(item.images) ? item.images[0] : item.images || item.thumbnail;
                             
             return (
+              <Link href={`/details/${item.id}`}>
               <Card className="max-w-sm h-full hover:shadow-md transition-shadow " key={item.id}>
                 <Image
                   className="w-full h-48 object-contain bg-[#F0EEED] p-2"
@@ -74,6 +77,7 @@ export default async function Home() {
                   )}
                 </CardHeader>
               </Card>
+              </Link>
             );
           })}
         </div>
@@ -88,6 +92,7 @@ export default async function Home() {
             const imageUrl = Array.isArray(item.images) ? item.images[0] : item.images || item.thumbnail;
                             
             return (
+              <Link href={`/details/${item.id}`}>
               <Card className="max-w-sm h-full hover:shadow-md transition-shadow " key={item.id}>
                 <Image
                   className="w-full h-48 object-contain bg-[#F0EEED] p-2"
@@ -129,6 +134,7 @@ export default async function Home() {
                   )}
                 </CardHeader>
               </Card>
+              </Link>
             );
           })}
         </div>
@@ -143,6 +149,7 @@ export default async function Home() {
             const imageUrl = Array.isArray(item.images) ? item.images[0] : item.images || item.thumbnail;
                             
             return (
+              <Link href={`/details/${item.id}`}>
               <Card className="max-w-sm h-full hover:shadow-md transition-shadow " key={item.id}>
                 <Image
                   className="w-full h-48 object-contain bg-[#F0EEED] p-2"
@@ -184,6 +191,7 @@ export default async function Home() {
                   )}
                 </CardHeader>
               </Card>
+              </Link>
             );
           })}
         </div>
