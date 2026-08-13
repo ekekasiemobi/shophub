@@ -158,9 +158,9 @@ const AnalyticsDashboard = () => {
         }));
 
         const sortedCategoryData = [...categoryDataRaw].sort((a, b) => b.value - a.value);
-        const categoryData: CategoryDataPoint[] = sortedCategoryData.length > 9
+        const categoryData: CategoryDataPoint[] = sortedCategoryData.length > 5
           ? [
-            ...sortedCategoryData.slice(0, 9),
+            ...sortedCategoryData.slice(0, 5),
             {
               name: 'Others',
               value: sortedCategoryData.slice(9).reduce((sum, category) => sum + category.value, 0)
@@ -209,8 +209,8 @@ const AnalyticsDashboard = () => {
           { title: 'Total Customers', value: data.summary.customers.toString(), color: 'border-purple-500' },
           { title: 'Avg Order Value', value: `$${data.summary.avgOrder}`, color: 'border-orange-500' },
         ].map((card, idx) => (
-          <div key={idx} className={`p-6 rounded-lg shadow-md border-l-4 ${card.color}`}>
-            <div className="">
+          <div key={idx} className={`p-6 rounded-lg border-l-4 max-w-sm h-full hover:shadow-md transition-shadow ${card.color}`}>
+            <div className="p-4 space-y-2 text-[18px] font-extrabold text-gray-900 leading-tight line-clamp-1">
               <p className="text-sm font-medium uppercase text-[18px] text-gray-900 leading-tight line-clamp-1">{card.title}</p>
               <p className="text-2xl font-bold mt-2 text-amber-500 ">{card.value}</p>
 

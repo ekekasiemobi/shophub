@@ -20,17 +20,17 @@ const AdminProfile = () => {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-1">First Name</label>
-          <input type="text" name="firstName" className="w-full border p-2 rounded" defaultValue="John" />
+          <input type="text" name="firstName" className="w-full border p-2 rounded" defaultValue="Emily" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-1">Last Name</label>
-          <input type="text" name="lastName" className="w-full border p-2 rounded" defaultValue="Doe" />
+          <input type="text" name="lastName" className="w-full border p-2 rounded" defaultValue="" />
         </div>
       </div>
       
       <div>
         <label className="block text-sm font-medium mb-1">Email</label>
-        <input type="email" name="email" className="w-full border p-2 rounded" defaultValue="john@example.com" />
+        <input type="email" name="email" className="w-full border p-2 rounded" defaultValue="emily@example.com" />
       </div>
 
       <div>
