@@ -57,7 +57,7 @@ function Customer() {
                         key={i}
                         className={`w-5 h-5 ${
                           i < item.rating
-                            ? "fill-yellow-400 text-yellow-400"
+                            ? "fill-yellow-500 text-yellow-500"
                             : "text-gray-300"
                         }`}
                       />
@@ -66,7 +66,7 @@ function Customer() {
                   {/* NAME + VERIFIED */}
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="font-semibold text-lg">{item.name}</h3>
-                    <span className="bg-green-500 rounded-full text-white">
+                    <span className="bg-green-500 rounded-full w-6 text-white text-center">
                       ✓
                     </span>
                   </div>
