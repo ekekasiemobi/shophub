@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../../globals.css"
 import SideNav from "./component/SideNav";
+// import AdminNav from "./component/adminNav";
 
 
 
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <div className="flex h-screen w-full overflow-hidden">
       <SideNav />
-      <main className="min-h-0 flex-1 overflow-y-auto bg-white">{children}</main>
+        {/* <AdminNav  title="Dashboard"/> */}
+        <main className="min-h-0 flex-1 overflow-y-auto bg-white">{children}</main>
+  
     </div>
   );
 }
