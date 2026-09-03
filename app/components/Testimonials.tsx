@@ -47,9 +47,9 @@ function Customer() {
         </div>
 
         <Carousel>
-          <CarouselContent className="grid grid-cols-4">
+          <CarouselContent className="">
             {testimonials.map((item, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="basis-1/2">
                 <div className="bg-white rounded-xl border p-6 shadow-sm h-full">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
